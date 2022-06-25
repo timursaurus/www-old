@@ -1,3 +1,0 @@
-# about
-
-## hello world

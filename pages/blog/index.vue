@@ -2,15 +2,24 @@
   <div>
     <content-navigation v-slot="{ navigation }">
       <ul>
-        <li v-for="(link, _) of navigation" :key="_">
-          {{ link }}
+        <li class="block" v-for="link of navigation.blog" :key="link.title">
+          <nuxt-link :to="link._path"> {{ link.title }} </nuxt-link>
         </li>
       </ul>
+      <!-- {{ navigation }} -->
+      <content-list path="/blog" v-slot="{ list }">
+        <ul>
+          <li v-for="link in list">
+            <nuxt-link :to="link._path"> {{ link.title }} </nuxt-link>
+          </li>
+        </ul>
+        <!-- {{ list }} -->
+      </content-list>
     </content-navigation>
-    <div class="dark:bg-blue-200 bg-red-200">
+    <!-- <div class="dark:bg-blue-200 bg-red-200">
       <button @click="toggleDark()">toggle theme</button>
       {{ isDark }}
-    </div>
+    </div> -->
   </div>
 </template>
 
