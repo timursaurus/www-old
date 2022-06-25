@@ -7,5 +7,10 @@ export default defineNuxtConfig({
   },
   target: "static",
   ssr: false,
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/content"],
+  content: {
+    highlight: {
+      theme: "one-dark-pro"
+    }
+  }
 });
